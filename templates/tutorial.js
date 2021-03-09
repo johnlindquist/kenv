@@ -22,7 +22,7 @@ console.log(`{{USER}} made a {{name}} script!`)
  * Step 2: Fetch data from the github api
  * 1. Comment out the `show` line above
  * 1. Uncomment lines the 2 lines "let response" and "inspect"
- * 2. Run `{{name}` again
+ * 2. Run `{{name}}` again
  */
 
 // let response = await get(`https://api.github.com/users/${user}`)
@@ -36,12 +36,8 @@ console.log(`{{USER}} made a {{name}} script!`)
  * Note: a prompt will ask you to select a directory for your file
  */
 
-// let contentPath = await env("TUTORIAL_CONTENT_PATH", {
-//   message: 'Write file to:? e.g. "~/.kenv/tmp"',
-// })
-// let content = await compileTemplate("tutorial.md", {
-//   name: response.data.name,
-// })
+// let contentPath = await env("TUTORIAL_CONTENT_PATH", { message: 'Write file to:? e.g. "~/.kenv/tmp"'})
+// let content = await compileTemplate("tutorial.md", { name: response.data.name })
 // let filePath = path.join(contentPath, `${user}.md`)
 // await writeFile(filePath, content)
 // await edit(filePath)
