@@ -1,0 +1,47 @@
+// Menu: Word API
+// Description: Queries a word api library
+// Author: John Lindquist
+// Twitter: @johnlindquist
+
+let { setSelectedText } = await kit("text")
+
+let queryWords = type => async word => {
+  if (!word || word?.length < 3) return []
+  let url = `https://api.datamuse.com/words?${type}=${word}&md=d`
+
+  let response = await get(url)
+  let words = response.data.map(({ word, defs }) => {
+    let description = ""
+    if (defs) {
+      let [type, meaning] = defs[0].split("\t")
+      description = `(${type}): ${meaning}`
+    }
+    return {
+      name: `${word}`,
+      value: word,
+      description,
+    }
+  })
+
+  return words.length ? words : [`No results for ${word}`]
+}
+
+let wordApi = async (type, input) => {
+  console.log({ input })
+  let word = await arg("Type a word:", queryWords(type))
+
+  setSelectedText(word.replace(/ /g, "+"))
+}
+
+let typeMap = {
+  Synonym: "ml",
+  Noun: "rel_jja",
+  Adjectives: "rel_jjb",
+  ["Sounds Like"]: "sl",
+  Rhyme: "rel_rhy",
+  Consonant: "rel_cns",
+}
+
+Object.entries(typeMap).forEach(([key, value]) => {
+  onTab(key, async input => await wordApi(value, input))
+})
