@@ -15,22 +15,23 @@ let todosChoices = () =>
     value: id,
   }))
 
-let actions = {
-  ["add"]: async () => {
-    addTodo(await arg("Enter todo name:"))
-    await actions["toggle"]()
-  },
-  ["remove"]: async () => {
-    let id = await arg("Remove todo:", todosChoices())
-    removeTodo(id)
-    await actions["remove"]()
-  },
-  ["toggle"]: async () => {
-    let id = await arg("Toggle todo:", todosChoices())
-    toggleTodo(id)
-    await actions["toggle"]()
-  },
+let toggle = async () => {
+  let id = await arg("Toggle todo:", todosChoices())
+  toggleTodo(id)
+  await run("todos", "--tab", "Toggle")
 }
 
-let key = await arg("Todos:", Object.keys(actions))
-await actions[key]()
+let add = async () => {
+  addTodo(await arg("Enter todo name:"))
+  await run("todos", "--tab", "Add")
+}
+
+let remove = async () => {
+  let id = await arg("Remove todo:", todosChoices())
+  removeTodo(id)
+  await run("todos", "--tab", "Remove")
+}
+
+onTab("Add", add)
+onTab("Toggle", toggle)
+onTab("Remove", remove)
