@@ -18,18 +18,18 @@ let todosChoices = () =>
 let toggle = async () => {
   let id = await arg("Toggle todo:", todosChoices())
   toggleTodo(id)
-  await run("todos", "--tab", "Toggle")
+  await toggle()
 }
 
 let add = async () => {
   addTodo(await arg("Enter todo name:"))
-  await run("todos", "--tab", "Add")
+  await add()
 }
 
 let remove = async () => {
   let id = await arg("Remove todo:", todosChoices())
   removeTodo(id)
-  await run("todos", "--tab", "Remove")
+  await remove()
 }
 
 onTab("Add", add)
