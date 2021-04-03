@@ -5,9 +5,9 @@
 
 let { setSelectedText } = await kit("text")
 
-let queryWords = type => async word => {
+let queryWords = (api, type) => async word => {
   if (!word || word?.length < 3) return []
-  let url = `https://api.datamuse.com/words?${type}=${word}&md=d`
+  let url = `https://api.datamuse.com/${api}?${type}=${word}&md=d`
 
   let response = await get(url)
   let words = response.data.map(({ word, defs }) => {
@@ -26,9 +26,13 @@ let queryWords = type => async word => {
   return words.length ? words : [`No results for ${word}`]
 }
 
+let input = await arg("Enter word:", queryWords("sug", "s"))
+
 let wordApi = async (type, input) => {
-  console.log({ input })
-  let word = await arg("Type a word:", queryWords(type))
+  let word = await arg(
+    { message: "Enter word:", input },
+    queryWords("words", type)
+  )
 
   setSelectedText(word.replace(/ /g, "+"))
 }
@@ -43,5 +47,7 @@ let typeMap = {
 }
 
 Object.entries(typeMap).forEach(([key, value]) => {
-  onTab(key, async input => await wordApi(value, input))
+  onTab(key, async () => {
+    return await wordApi(value, input)
+  })
 })
