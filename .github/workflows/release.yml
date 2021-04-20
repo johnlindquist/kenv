@@ -40,7 +40,7 @@ jobs:
           tag_name: ${{ steps.time.outputs.time }}
           release_name: kenv-${{ env.GITHUB_REF_SLUG_URL }}.zip
           draft: true
-          prerelease: tru
+          prerelease: false
 
       - uses: actions/upload-release-asset@v1.0.1
         env:
