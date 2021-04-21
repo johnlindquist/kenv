@@ -1,6 +1,6 @@
-//Menu: Browse scriptkit.app
-//Description: Launch scriptkit.app in your browser
+//Menu: Browse scriptkit.com
+//Description: Launch scriptkit.com in your browser
 
 //Note: Feels free to delete this script!
 
-exec(`open https://scriptkit.app`)
+exec(`open https://scriptkit.com`)
