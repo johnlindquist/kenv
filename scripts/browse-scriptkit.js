@@ -1,6 +1,8 @@
-//Menu: Browse scriptkit.com
-//Description: Launch scriptkit.com in your browser
+// Menu: Browse scriptkit.com
+// Description: Launch scriptkit.com in your browser
+// Author: John Lindquist
+// Twitter: @johnlindquist
 
-//Note: Feels free to delete this script!
+// Note: Feel free to delete this script!
 
 exec(`open https://scriptkit.com`)
