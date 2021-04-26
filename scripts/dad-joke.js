@@ -1,5 +1,5 @@
 // Menu: Dad Joke
-// Description: Logs out a Dad Joke from icanhazdadjoke.com
+// Description: Speaks a Dad Joke from icanhazdadjoke.com
 // Author: John Lindquist
 // Twitter: @johnlindquist
 
@@ -10,5 +10,8 @@ let response = await get(`https://icanhazdadjoke.com/`, {
     Accept: "text/plain",
   },
 })
+
+setPlaceholder("Dad Joke")
+setPanel(response.data)
 
 say(response.data)
