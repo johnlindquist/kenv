@@ -6,7 +6,8 @@
  * Reminder: The prompt can be invoked with cmd+;
  */
 
-//Find console.log messages in ~/.kenv/logs/console.log
+// Find console.log messages in <- logs/console.log
+// (You can also `tail -f ~/.kenv/logs/console.log` in the terminal)
 console.log(`{{USER}} made a {{name}} script!`)
 
 /**
@@ -32,7 +33,6 @@ console.log(`{{USER}} made a {{name}} script!`)
  * Step 3: Write your data to a template
  * 1. Comment out the `inspect` line above
  * 2. Uncomment the lines from "contentPath" to "edit"
- * 3. Run `{{name}} {{USER}}` again
  * Note: a prompt will ask you to select a directory for your file
  */
 
