@@ -6,8 +6,8 @@
  * Reminder: The prompt can be invoked with cmd+;
  */
 
-// Find console.log messages in <- logs/console.log
-// (You can also `tail -f ~/.kenv/logs/console.log` in the terminal)
+// Find console.log messages in <- logs/{{name}}.log
+// (You can also `tail -f ~/.kenv/logs/{{name}}.log` in the terminal)
 console.log(`{{USER}} made a {{name}} script!`)
 
 /**
@@ -17,7 +17,7 @@ console.log(`{{USER}} made a {{name}} script!`)
  */
 
 // let user = await arg("Type your github username:")
-// show(`<h1 class="p-2">You typed: ${user}</h1>`)
+// show(`<div class="p-2"><p class="text-xl">You typed: ${user}.</p><p> Hit escape to close window.</p></div>`)
 
 /**
  * Step 2: Fetch data from the github api
@@ -36,7 +36,7 @@ console.log(`{{USER}} made a {{name}} script!`)
  * Note: a prompt will ask you to select a directory for your file
  */
 
-// let contentPath = await env("TUTORIAL_CONTENT_PATH", { message: 'Write file to:? e.g. "~/.kenv/tmp"'})
+// let contentPath = await env("TUTORIAL_CONTENT_PATH", { hint: `Write "${user}.md" to which directory:? e.g. "~/.kenv/tmp"`})
 // let content = await compileTemplate("tutorial.md", { name: response.data.name })
 // let filePath = path.join(contentPath, `${user}.md`)
 // await writeFile(filePath, content)
