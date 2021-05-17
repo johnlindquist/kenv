@@ -1,6 +1,8 @@
 // Menu: Todos "App"
 // Description: Example of create/read/update/delete
 // Shortcut: cmd shift .
+// Author: John Lindquist
+// Twitter: @johnlindquist
 
 let {
   addTodo,
