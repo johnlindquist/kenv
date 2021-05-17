@@ -146,7 +146,10 @@ let testFile = "test.txt"
 await writeFile(testFile, "testing")
 
 exec(
-  `new share-file --url https://scriptkit.com/scripts/johnlindquist/share-file.js --no-edit`,
+  `${kitPath(
+    "bin",
+    "kit"
+  )} new share-file --url https://scriptkit.com/scripts/johnlindquist/share-file.js --no-edit`,
   {
     stdio: "inherit",
     env: {
