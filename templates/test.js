@@ -146,7 +146,7 @@ let testFile = "test.txt"
 await writeFile(testFile, "testing")
 
 exec(
-  `${kitPath(
+  `bash  ${kitPath(
     "bin",
     "kit"
   )} new share-file --url https://scriptkit.com/scripts/johnlindquist/share-file.js --no-edit`,
@@ -182,11 +182,14 @@ kill(shareFileChild.pid)
 echo(`"share-file" passed`)
 
 exec(
-  `new hello-world --url https://scriptkit.com/scripts/johnlindquist/hello-world.js --no-edit`,
+  `bash ${kitPath(
+    "bin",
+    "kit"
+  )} new hello-world --url https://scriptkit.com/scripts/johnlindquist/hello-world.js --no-edit`,
   {
     stdio: "inherit",
     env: {
-      PATH: kenvPath("bin") + ":" + env.PATH,
+      PATH: kitPath("bin") + ":" + env.PATH,
     },
   }
 )
