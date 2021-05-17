@@ -102,10 +102,15 @@ console.log("PATH:", env.PATH)
 
 let newDefault = "new-default"
 
-console.log({ kit })
 let newChild = spawnSync(
-  `kit`,
-  [`new`, newDefault, "--trust", "--no-edit"],
+  `bash`,
+  [
+    kitPath("bin", "kit"),
+    `new`,
+    newDefault,
+    "--trust",
+    "--no-edit",
+  ],
   {
     stdio: "inherit",
     env: {
