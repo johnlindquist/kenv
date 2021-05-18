@@ -115,6 +115,7 @@ let newChild = spawnSync(
     stdio: "inherit",
     env: {
       KENV: kenvPath(),
+      PATH: kitPath("bin") + ":" + env.PATH,
     },
   }
 )
@@ -153,7 +154,8 @@ exec(
   {
     stdio: "inherit",
     env: {
-      PATH: kenvPath("bin") + ":" + env.PATH,
+      KENV: kenvPath(),
+      PATH: kitPath("bin") + ":" + env.PATH,
     },
   }
 )
@@ -169,7 +171,8 @@ let shareFileChild = spawn(
   {
     stdio: "inherit",
     env: {
-      PATH: kenvPath("bin") + ":" + env.PATH,
+      KENV: kenvPath(),
+      PATH: kitPath("bin") + ":" + env.PATH,
     },
   }
 )
@@ -189,6 +192,7 @@ exec(
   {
     stdio: "inherit",
     env: {
+      KENV: kenvPath(),
       PATH: kitPath("bin") + ":" + env.PATH,
     },
   }
