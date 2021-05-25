@@ -1,11 +1,7 @@
 // Exclude: true
 // Shortcut: control option v
 
-let { setSelectedText } = await kit("text")
-
-let clipboardDb = db("clipboard-history")
-
-let history = clipboardDb.get("history").value()
+let { history } = await db("clipboard-history")
 
 let value = await arg("What to paste?", () => {
   return history.map(
