@@ -1,17 +1,20 @@
-// Exclude: true
-// Shortcut: control option v
+let { history } = await db(
+  kitPath("db", "clipboard-history.json")
+)
 
-let { history } = await db("clipboard-history")
-
-let value = await arg("What to paste?", () => {
+let { value, type } = await arg("What to paste?", () => {
   return history.map(
     ({ value, type, timestamp, secret }) => {
       return {
+        type,
         name: secret
           ? value.slice(0, 4).padEnd(10, "*")
           : value,
+        value: {
+          value,
+          type,
+        },
         description: timestamp,
-        value,
         preview:
           type === "image"
             ? md(`![timestamp](${value})`)
@@ -26,4 +29,11 @@ let value = await arg("What to paste?", () => {
   )
 })
 
-setSelectedText(value)
+if (type === "image") {
+  await copyPathAsImage(value)
+  await keystroke("command v")
+}
+
+if (type === "text") {
+  await setSelectedText(value)
+}
