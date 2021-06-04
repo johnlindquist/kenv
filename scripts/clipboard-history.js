@@ -1,3 +1,6 @@
+// Shortcut: control option v
+// Exclude: true
+
 let { history } = await db(
   kitPath("db", "clipboard-history.json")
 )
