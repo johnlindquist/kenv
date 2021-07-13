@@ -46,6 +46,6 @@ let typeMap = {
 
 Object.entries(typeMap).forEach(([key, value]) => {
   onTab(key, async () => {
-    return await wordApi(value, input)
+    await wordApi(value, input)
   })
 })
