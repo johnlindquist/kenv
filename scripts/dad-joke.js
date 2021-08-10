@@ -6,10 +6,9 @@
 let response = await get(`https://icanhazdadjoke.com/`, {
   headers: {
     Accept: "text/plain",
+    "User-Agent": "axios 0.21.1", //required for icanhazdadjoke.com
   },
 })
 
-setPlaceholder("Dad Joke")
-setPanel(response.data)
-
 say(response.data)
+await div(response.data, `p-6`)
