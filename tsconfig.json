@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "types": ["@johnlindquist/kit"],
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node"
