@@ -5,4 +5,4 @@
 
 // Note: Feel free to delete this script!
 
-await $`open https://scriptkit.com`
+await $`open "https://scriptkit.com"`
