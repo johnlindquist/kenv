@@ -1,5 +1,5 @@
 /*
-# Open [https://scriptkit.com][https://scriptkit.com] in your browser
+## Open [https://scriptkit.com](https://scriptkit.com) in your browser
 */
 
 // Name: ScriptKit.com
