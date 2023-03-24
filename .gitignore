@@ -105,6 +105,7 @@ dist
 .history
 
 # Script Kit
+kenvs
 .scripts
 cache
 tmp

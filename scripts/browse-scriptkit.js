@@ -1,8 +1,13 @@
-// Menu: Browse scriptkit.com
+/*
+## Open [https://scriptkit.com](https://scriptkit.com) in your browser
+*/
+
+// Name: ScriptKit.com
 // Description: Launch scriptkit.com in your browser
 // Author: John Lindquist
 // Twitter: @johnlindquist
 
 // Note: Feel free to delete this script!
 
-await $`open "https://scriptkit.com"`
+import "@johnlindquist/kit"
+browse("https://scriptkit.com")
