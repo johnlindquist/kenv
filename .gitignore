@@ -103,4 +103,10 @@ dist
 # TernJS port file
 .tern-port
 .history
+
+# Script Kit
 .scripts
+cache
+tmp
+db
+bin
