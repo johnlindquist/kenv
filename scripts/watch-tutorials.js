@@ -1,5 +1,5 @@
 /*
-## Open [https://www.scriptkit.com/tutorials](https://www.scriptkit.com/tutorials)
+## Open [https://scriptkit.com/tutorials](https://scriptkit.com/tutorials)
 
 Watch Script Kit Tutorial videos. 👀
 */
@@ -12,4 +12,4 @@ Watch Script Kit Tutorial videos. 👀
 // Note: Feel free to delete this script!
 
 import "@johnlindquist/kit"
-open("https://www.scriptkit.com/tutorials")
+open("https://scriptkit.com/tutorials")
