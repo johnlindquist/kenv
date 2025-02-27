@@ -1,5 +1,5 @@
 /*
-## Open [https://scriptkit.com/scripts](https://scriptkit.com/scripts)
+## Open [https://scriptkit.com](https://scriptkit.com)
 
 Browse scripts contribued by the Script Kit community. 🎉
 
@@ -9,11 +9,11 @@ To share your own script, post to our Script Kit GitHub Discussions:
 */
 
 // Name: Browse Community Scripts
-// Description: Launch scriptkit.com/scripts in your browser
+// Description: Launch scriptkit.com in your browser
 // Author: John Lindquist
 // Twitter: @johnlindquist
 
 // Note: Feel free to delete this script!
 
-import "@johnlindquist/kit"
-open("https://scriptkit.com/scripts")
+import "@johnlindquist/kit";
+open("https://scriptkit.com");
